@@ -10,7 +10,9 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 
-/* This class extends our JFrame from GUI class and adds all relative Java Swing components to the GUI
+/*Author : Teman Beck
+*Date : August 18th, 2021
+*This class extends our GUI class and adds all relative Java Swing components to the GUI
 */
 
 public class MainFrame extends JFrame {
@@ -98,9 +100,14 @@ public class MainFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 //Takes input field expression and converts it to postfix   
                 setInputExpression(enterExpressionTxt.getText());                   //calls the setInputExpressionTxt method button event
+
+                //call a method to pass expression in to remove whitespaces
+
+
                 
                 Conversion conversion = new Conversion();                           //calls new instance of conversion 
-                conversion.preToPost(inputExpression);                              //calls method to convert to postfix expression
+                //conversion.removeSpace(inputExpression);
+                conversion.preToPost(conversion.removeSpace(inputExpression));      //calls method to convert to postfix expression
                 
                 String operands = conversion.getResult();                           //create and initialize operands to getResult method in conversion class
                                       
@@ -120,7 +127,7 @@ public class MainFrame extends JFrame {
                 setInputExpression(enterExpressionTxt.getText());                   //calls the setInputExpressionTxt method when button is clicked
                 
                 Conversion conversion = new Conversion();                           //calls new instance of conversion
-                conversion.postToPre(inputExpression);                              //calls method to convert to prefix expression
+                conversion.postToPre(conversion.removeSpace(inputExpression));      //calls method to convert to prefix expression
                 
                 String operands = conversion.getResult();                           //create and initialize operands to getResult method in conversion class
                                       

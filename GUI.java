@@ -1,8 +1,11 @@
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
-/*This class creates our GUI for our main program functionality
-*This class contains our main run method
+/*Author : Teman Beck
+*Date : August 18th, 2021
+*This class defines our GUI for our main program functionality.
+*
+*This class contains our main run method.
 */
 
 public class GUI {
