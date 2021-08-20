@@ -17,7 +17,7 @@ public class MainFrame extends JFrame {
     final static boolean shouldFill = true;
     private String inputExpression;                                         //declare string variable to intake enterExpressionTxt field
     //this variable will be returned and set from conversion class
-    //private String convertedInputExpressionString;                          //declares string variable to store converted expression field
+    private String convertedInputExpressionString ="";                          //declares string variable to store converted expression field
 
 
     public MainFrame(String title){
@@ -105,12 +105,15 @@ public class MainFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 //Takes input field expression and converts it to postfix
 
-                System.out.println("Prefix to Postfix button working");         //Test that prefix to postfix button is working    
+                //System.out.println("Prefix to Postfix button working");         //Test that prefix to postfix button is working    
                 setInputExpression(enterExpressionTxt.getText());               //calls the setInputExpressionTxt method when button is clicked
-                System.out.println(inputExpression);                            //test that the inputExpression has been updated with input
+                //System.out.println(inputExpression);                            //test that the inputExpression has been updated with input
 
-                new Conversion().testInput(inputExpression);
+                Conversion conversion = new Conversion();
+                conversion.testInput(inputExpression);
                 //getResultFieldTxt();                                            //returns converted expression to resultFieldTxt
+                //conversion.getResult();
+                System.out.println(convertedInputExpressionString);
                 
             }
             
@@ -122,11 +125,12 @@ public class MainFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Takes input field expression and converts it to prefix
-                System.out.println("Postfix to Prefix button working");
+                //System.out.println("Postfix to Prefix button working");
                 setInputExpression(enterExpressionTxt.getText());               //calls the setInputExpressionTxt method when button is clicked
-                System.out.println(inputExpression);                            //test that the inputExpression has been updated with input
+                //System.out.println(inputExpression);                            //test that the inputExpression has been updated with input
 
                 new Conversion().testInput(inputExpression);
+                //getReverseString();
                // getResultFieldTxt();                                            //returns converted expression to resultFieldTxt
                 
             }
@@ -143,11 +147,10 @@ public class MainFrame extends JFrame {
     }
 
     //set setter method to obtain resultFieldTxt from algorithm 
-    //will call this at end of conversion
-   // public void setResultFieldTxt(String newExpression){
-        //this.convertedInputExpressionString = newExpression;                    //assigns convertedInputExpression from passed in String
+   public void setResultFieldTxt(String newExpression){
+        this.convertedInputExpressionString = newExpression;                    //assigns convertedInputExpression from passed in String
 
-   //}
+   }
 
     //method to return the result field 
     //private String getResultFieldTxt(){
