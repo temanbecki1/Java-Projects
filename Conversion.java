@@ -112,11 +112,11 @@ public class Conversion {
     }
 
 
-    public String removeSpace(String expression)                                                                //method to remove white spaces from textfield input        
-    {
+    public String removeSpace(String expression){                                                                //method to remove white spaces from textfield input        
+    
         exp = expression.replaceAll("\\s","");                                                                  //specifies what to remove
         return exp;
-    }
+    }     
 }
             
 
